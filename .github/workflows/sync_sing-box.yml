@@ -75,7 +75,7 @@ jobs:
     outputs:
       changes: ${{ steps.sync.outputs.changes }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: "${{ secrets.PAT }}"
@@ -116,7 +116,7 @@ jobs:
     runs-on: macos-latest
     needs: sync
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0
@@ -148,7 +148,7 @@ jobs:
     runs-on: macos-26
     needs: sync
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0

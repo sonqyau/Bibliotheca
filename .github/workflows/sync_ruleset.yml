@@ -22,7 +22,7 @@ jobs:
           git config --global core.preloadindex true
           git config --global core.fscache true
           git config --global gc.auto 0
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: false
