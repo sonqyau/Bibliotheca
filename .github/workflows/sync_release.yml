@@ -23,7 +23,7 @@ jobs:
       workflows: ${{ steps.matrix.outputs.workflows }}
       should_proceed: ${{ steps.gate.outputs.should_proceed }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ref: ${{ github.ref }}
@@ -57,7 +57,7 @@ jobs:
         workflow: ${{fromJson(needs.prepare.outputs.workflows)}}
       fail-fast: false
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ref: ${{ github.ref }}
@@ -122,7 +122,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ref: ${{ github.ref }}
@@ -166,7 +166,7 @@ jobs:
           done
       - id: generate_notes
         run: git -c log.showSignature=false log --pretty=format:"* %s (%h)" --since="24 hours ago" --no-merges > release_notes.md
-      - uses: softprops/action-gh-release@v2.4.1
+      - uses: softprops/action-gh-release@v2.4.2
         with:
           tag_name: v${{ needs.prepare.outputs.year }}.${{ needs.prepare.outputs.month }}.${{ needs.prepare.outputs.day }}
           name: ${{ needs.prepare.outputs.date }}
