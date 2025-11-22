@@ -3,6 +3,7 @@
   "rules": [
     {
       "domain": [
+        "antigravity.google",
         "ai.google.dev",
         "robinfrontend-pa.googleapis.com",
         "aisandbox-pa.googleapis.com",
